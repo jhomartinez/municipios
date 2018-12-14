@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="./../Template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ListLomLogmigracionTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:form styleClass="jsfcrud_list_form">
+                <h:panelGroup id="messagePanel" layout="block">
+                    <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                </h:panelGroup>
+                <h:outputText escape="false" value="#{bundle.ListLomLogmigracionEmpty}" rendered="#{lomLogmigracionController.items.rowCount == 0}"/>
+                <h:panelGroup rendered="#{lomLogmigracionController.items.rowCount > 0}">
+                    <h:outputText value="#{lomLogmigracionController.pagination.pageFirstItem + 1}..#{lomLogmigracionController.pagination.pageLastItem + 1}/#{lomLogmigracionController.pagination.itemsCount}"/>&nbsp;
+                    <h:commandLink action="#{lomLogmigracionController.previous}" value="#{bundle.Previous} #{lomLogmigracionController.pagination.pageSize}" rendered="#{lomLogmigracionController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink action="#{lomLogmigracionController.next}" value="#{bundle.Next} #{lomLogmigracionController.pagination.pageSize}" rendered="#{lomLogmigracionController.pagination.hasNextPage}"/>&nbsp;
+                    <h:dataTable value="#{lomLogmigracionController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListLomLogmigracionTitle_lomIdlogmigracion}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.lomIdlogmigracion}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListLomLogmigracionTitle_lomIdproceso}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.lomIdproceso}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListLomLogmigracionTitle_migIdmigracion}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.migIdmigracion}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListLomLogmigracionTitle_lomFechainicial}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.lomFechainicial}">
+                                <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                            </h:outputText>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListLomLogmigracionTitle_lomFechafinal}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.lomFechafinal}">
+                                <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                            </h:outputText>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListLomLogmigracionTitle_lomEjecutados}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.lomEjecutados}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListLomLogmigracionTitle_mrtIdmigregtipoactual}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.mrtIdmigregtipoactual}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListLomLogmigracionTitle_lomEstadomigracion}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.lomEstadomigracion}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListLomLogmigracionTitle_lomEstadoRegistro}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.lomEstadoRegistro}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListLomLogmigracionTitle_lomFechacreacion}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.lomFechacreacion}">
+                                <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                            </h:outputText>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListLomLogmigracionTitle_lmrFechamodificacion}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.lmrFechamodificacion}">
+                                <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                            </h:outputText>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListLomLogmigracionTitle_lmrUsuariocreacion}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.lmrUsuariocreacion}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListLomLogmigracionTitle_lmrUsuariomodificacion}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.lmrUsuariomodificacion}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="&nbsp;"/>
+                            </f:facet>
+                            <h:commandLink action="#{lomLogmigracionController.prepareView}" value="#{bundle.ListLomLogmigracionViewLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{lomLogmigracionController.prepareEdit}" value="#{bundle.ListLomLogmigracionEditLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{lomLogmigracionController.destroy}" value="#{bundle.ListLomLogmigracionDestroyLink}"/>
+                        </h:column>
+                    </h:dataTable>
+                </h:panelGroup>
+                <br />
+                <h:commandLink action="#{lomLogmigracionController.prepareCreate}" value="#{bundle.ListLomLogmigracionCreateLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ListLomLogmigracionIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

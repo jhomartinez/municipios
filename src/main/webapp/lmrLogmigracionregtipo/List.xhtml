@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="./../Template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ListLmrLogmigracionregtipoTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:form styleClass="jsfcrud_list_form">
+                <h:panelGroup id="messagePanel" layout="block">
+                    <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                </h:panelGroup>
+                <h:outputText escape="false" value="#{bundle.ListLmrLogmigracionregtipoEmpty}" rendered="#{lmrLogmigracionregtipoController.items.rowCount == 0}"/>
+                <h:panelGroup rendered="#{lmrLogmigracionregtipoController.items.rowCount > 0}">
+                    <h:outputText value="#{lmrLogmigracionregtipoController.pagination.pageFirstItem + 1}..#{lmrLogmigracionregtipoController.pagination.pageLastItem + 1}/#{lmrLogmigracionregtipoController.pagination.itemsCount}"/>&nbsp;
+                    <h:commandLink action="#{lmrLogmigracionregtipoController.previous}" value="#{bundle.Previous} #{lmrLogmigracionregtipoController.pagination.pageSize}" rendered="#{lmrLogmigracionregtipoController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink action="#{lmrLogmigracionregtipoController.next}" value="#{bundle.Next} #{lmrLogmigracionregtipoController.pagination.pageSize}" rendered="#{lmrLogmigracionregtipoController.pagination.hasNextPage}"/>&nbsp;
+                    <h:dataTable value="#{lmrLogmigracionregtipoController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListLmrLogmigracionregtipoTitle_lmrIdlogmigracion}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.lmrIdlogmigracion}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListLmrLogmigracionregtipoTitle_pmiIdproceso}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.pmiIdproceso}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListLmrLogmigracionregtipoTitle_mrtIdmigracionregtipo}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.mrtIdmigracionregtipo}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListLmrLogmigracionregtipoTitle_lmrFechainicial}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.lmrFechainicial}">
+                                <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                            </h:outputText>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListLmrLogmigracionregtipoTitle_lmrFechafinal}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.lmrFechafinal}">
+                                <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                            </h:outputText>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListLmrLogmigracionregtipoTitle_lmrInsertados}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.lmrInsertados}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListLmrLogmigracionregtipoTitle_lmrActualizados}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.lmrActualizados}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListLmrLogmigracionregtipoTitle_lmrBorrados}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.lmrBorrados}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListLmrLogmigracionregtipoTitle_lmrErrores}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.lmrErrores}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListLmrLogmigracionregtipoTitle_lmrEstadoRegistro}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.lmrEstadoRegistro}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListLmrLogmigracionregtipoTitle_lmrFechacreacion}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.lmrFechacreacion}">
+                                <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                            </h:outputText>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListLmrLogmigracionregtipoTitle_lmrFechamodificacion}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.lmrFechamodificacion}">
+                                <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                            </h:outputText>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListLmrLogmigracionregtipoTitle_lmrUsuariocreacion}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.lmrUsuariocreacion}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListLmrLogmigracionregtipoTitle_lmrUsuariomodificacion}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.lmrUsuariomodificacion}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListLmrLogmigracionregtipoTitle_lmrSeleccionados}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.lmrSeleccionados}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListLmrLogmigracionregtipoTitle_lmrSincambios}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.lmrSincambios}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="&nbsp;"/>
+                            </f:facet>
+                            <h:commandLink action="#{lmrLogmigracionregtipoController.prepareView}" value="#{bundle.ListLmrLogmigracionregtipoViewLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{lmrLogmigracionregtipoController.prepareEdit}" value="#{bundle.ListLmrLogmigracionregtipoEditLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{lmrLogmigracionregtipoController.destroy}" value="#{bundle.ListLmrLogmigracionregtipoDestroyLink}"/>
+                        </h:column>
+                    </h:dataTable>
+                </h:panelGroup>
+                <br />
+                <h:commandLink action="#{lmrLogmigracionregtipoController.prepareCreate}" value="#{bundle.ListLmrLogmigracionregtipoCreateLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ListLmrLogmigracionregtipoIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

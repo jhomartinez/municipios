@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="./../Template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditLomLogmigracionTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditLomLogmigracionLabel_lomIdlogmigracion}" for="lomIdlogmigracion" />
+                    <h:inputText id="lomIdlogmigracion" value="#{lomLogmigracionController.selected.lomIdlogmigracion}" title="#{bundle.EditLomLogmigracionTitle_lomIdlogmigracion}" required="true" requiredMessage="#{bundle.EditLomLogmigracionRequiredMessage_lomIdlogmigracion}"/>
+                    <h:outputLabel value="#{bundle.EditLomLogmigracionLabel_lomIdproceso}" for="lomIdproceso" />
+                    <h:inputText id="lomIdproceso" value="#{lomLogmigracionController.selected.lomIdproceso}" title="#{bundle.EditLomLogmigracionTitle_lomIdproceso}" />
+                    <h:outputLabel value="#{bundle.EditLomLogmigracionLabel_migIdmigracion}" for="migIdmigracion" />
+                    <h:inputText id="migIdmigracion" value="#{lomLogmigracionController.selected.migIdmigracion}" title="#{bundle.EditLomLogmigracionTitle_migIdmigracion}" />
+                    <h:outputLabel value="#{bundle.EditLomLogmigracionLabel_lomFechainicial}" for="lomFechainicial" />
+                    <h:inputText id="lomFechainicial" value="#{lomLogmigracionController.selected.lomFechainicial}" title="#{bundle.EditLomLogmigracionTitle_lomFechainicial}" >
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.EditLomLogmigracionLabel_lomFechafinal}" for="lomFechafinal" />
+                    <h:inputText id="lomFechafinal" value="#{lomLogmigracionController.selected.lomFechafinal}" title="#{bundle.EditLomLogmigracionTitle_lomFechafinal}" >
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.EditLomLogmigracionLabel_lomEjecutados}" for="lomEjecutados" />
+                    <h:inputText id="lomEjecutados" value="#{lomLogmigracionController.selected.lomEjecutados}" title="#{bundle.EditLomLogmigracionTitle_lomEjecutados}" />
+                    <h:outputLabel value="#{bundle.EditLomLogmigracionLabel_mrtIdmigregtipoactual}" for="mrtIdmigregtipoactual" />
+                    <h:inputText id="mrtIdmigregtipoactual" value="#{lomLogmigracionController.selected.mrtIdmigregtipoactual}" title="#{bundle.EditLomLogmigracionTitle_mrtIdmigregtipoactual}" />
+                    <h:outputLabel value="#{bundle.EditLomLogmigracionLabel_lomEstadomigracion}" for="lomEstadomigracion" />
+                    <h:inputText id="lomEstadomigracion" value="#{lomLogmigracionController.selected.lomEstadomigracion}" title="#{bundle.EditLomLogmigracionTitle_lomEstadomigracion}" />
+                    <h:outputLabel value="#{bundle.EditLomLogmigracionLabel_lomEstadoRegistro}" for="lomEstadoRegistro" />
+                    <h:inputText id="lomEstadoRegistro" value="#{lomLogmigracionController.selected.lomEstadoRegistro}" title="#{bundle.EditLomLogmigracionTitle_lomEstadoRegistro}" />
+                    <h:outputLabel value="#{bundle.EditLomLogmigracionLabel_lomFechacreacion}" for="lomFechacreacion" />
+                    <h:inputText id="lomFechacreacion" value="#{lomLogmigracionController.selected.lomFechacreacion}" title="#{bundle.EditLomLogmigracionTitle_lomFechacreacion}" >
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.EditLomLogmigracionLabel_lmrFechamodificacion}" for="lmrFechamodificacion" />
+                    <h:inputText id="lmrFechamodificacion" value="#{lomLogmigracionController.selected.lmrFechamodificacion}" title="#{bundle.EditLomLogmigracionTitle_lmrFechamodificacion}" >
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.EditLomLogmigracionLabel_lmrUsuariocreacion}" for="lmrUsuariocreacion" />
+                    <h:inputText id="lmrUsuariocreacion" value="#{lomLogmigracionController.selected.lmrUsuariocreacion}" title="#{bundle.EditLomLogmigracionTitle_lmrUsuariocreacion}" />
+                    <h:outputLabel value="#{bundle.EditLomLogmigracionLabel_lmrUsuariomodificacion}" for="lmrUsuariomodificacion" />
+                    <h:inputText id="lmrUsuariomodificacion" value="#{lomLogmigracionController.selected.lmrUsuariomodificacion}" title="#{bundle.EditLomLogmigracionTitle_lmrUsuariomodificacion}" />
+                </h:panelGrid>
+                <h:commandLink action="#{lomLogmigracionController.update}" value="#{bundle.EditLomLogmigracionSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditLomLogmigracionViewLink}"/>
+                <br />
+                <h:commandLink action="#{lomLogmigracionController.prepareList}" value="#{bundle.EditLomLogmigracionShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.EditLomLogmigracionIndexLink}" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

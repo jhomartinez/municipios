@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewLmrLogmigracionregtipoTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewLmrLogmigracionregtipoLabel_lmrIdlogmigracion}"/>
+                    <h:outputText value="#{lmrLogmigracionregtipoController.selected.lmrIdlogmigracion}" title="#{bundle.ViewLmrLogmigracionregtipoTitle_lmrIdlogmigracion}"/>
+                    <h:outputText value="#{bundle.ViewLmrLogmigracionregtipoLabel_pmiIdproceso}"/>
+                    <h:outputText value="#{lmrLogmigracionregtipoController.selected.pmiIdproceso}" title="#{bundle.ViewLmrLogmigracionregtipoTitle_pmiIdproceso}"/>
+                    <h:outputText value="#{bundle.ViewLmrLogmigracionregtipoLabel_mrtIdmigracionregtipo}"/>
+                    <h:outputText value="#{lmrLogmigracionregtipoController.selected.mrtIdmigracionregtipo}" title="#{bundle.ViewLmrLogmigracionregtipoTitle_mrtIdmigracionregtipo}"/>
+                    <h:outputText value="#{bundle.ViewLmrLogmigracionregtipoLabel_lmrFechainicial}"/>
+                    <h:outputText value="#{lmrLogmigracionregtipoController.selected.lmrFechainicial}" title="#{bundle.ViewLmrLogmigracionregtipoTitle_lmrFechainicial}">
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:outputText>
+                    <h:outputText value="#{bundle.ViewLmrLogmigracionregtipoLabel_lmrFechafinal}"/>
+                    <h:outputText value="#{lmrLogmigracionregtipoController.selected.lmrFechafinal}" title="#{bundle.ViewLmrLogmigracionregtipoTitle_lmrFechafinal}">
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:outputText>
+                    <h:outputText value="#{bundle.ViewLmrLogmigracionregtipoLabel_lmrInsertados}"/>
+                    <h:outputText value="#{lmrLogmigracionregtipoController.selected.lmrInsertados}" title="#{bundle.ViewLmrLogmigracionregtipoTitle_lmrInsertados}"/>
+                    <h:outputText value="#{bundle.ViewLmrLogmigracionregtipoLabel_lmrActualizados}"/>
+                    <h:outputText value="#{lmrLogmigracionregtipoController.selected.lmrActualizados}" title="#{bundle.ViewLmrLogmigracionregtipoTitle_lmrActualizados}"/>
+                    <h:outputText value="#{bundle.ViewLmrLogmigracionregtipoLabel_lmrBorrados}"/>
+                    <h:outputText value="#{lmrLogmigracionregtipoController.selected.lmrBorrados}" title="#{bundle.ViewLmrLogmigracionregtipoTitle_lmrBorrados}"/>
+                    <h:outputText value="#{bundle.ViewLmrLogmigracionregtipoLabel_lmrErrores}"/>
+                    <h:outputText value="#{lmrLogmigracionregtipoController.selected.lmrErrores}" title="#{bundle.ViewLmrLogmigracionregtipoTitle_lmrErrores}"/>
+                    <h:outputText value="#{bundle.ViewLmrLogmigracionregtipoLabel_lmrEstadoRegistro}"/>
+                    <h:outputText value="#{lmrLogmigracionregtipoController.selected.lmrEstadoRegistro}" title="#{bundle.ViewLmrLogmigracionregtipoTitle_lmrEstadoRegistro}"/>
+                    <h:outputText value="#{bundle.ViewLmrLogmigracionregtipoLabel_lmrFechacreacion}"/>
+                    <h:outputText value="#{lmrLogmigracionregtipoController.selected.lmrFechacreacion}" title="#{bundle.ViewLmrLogmigracionregtipoTitle_lmrFechacreacion}">
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:outputText>
+                    <h:outputText value="#{bundle.ViewLmrLogmigracionregtipoLabel_lmrFechamodificacion}"/>
+                    <h:outputText value="#{lmrLogmigracionregtipoController.selected.lmrFechamodificacion}" title="#{bundle.ViewLmrLogmigracionregtipoTitle_lmrFechamodificacion}">
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:outputText>
+                    <h:outputText value="#{bundle.ViewLmrLogmigracionregtipoLabel_lmrUsuariocreacion}"/>
+                    <h:outputText value="#{lmrLogmigracionregtipoController.selected.lmrUsuariocreacion}" title="#{bundle.ViewLmrLogmigracionregtipoTitle_lmrUsuariocreacion}"/>
+                    <h:outputText value="#{bundle.ViewLmrLogmigracionregtipoLabel_lmrUsuariomodificacion}"/>
+                    <h:outputText value="#{lmrLogmigracionregtipoController.selected.lmrUsuariomodificacion}" title="#{bundle.ViewLmrLogmigracionregtipoTitle_lmrUsuariomodificacion}"/>
+                    <h:outputText value="#{bundle.ViewLmrLogmigracionregtipoLabel_lmrSeleccionados}"/>
+                    <h:outputText value="#{lmrLogmigracionregtipoController.selected.lmrSeleccionados}" title="#{bundle.ViewLmrLogmigracionregtipoTitle_lmrSeleccionados}"/>
+                    <h:outputText value="#{bundle.ViewLmrLogmigracionregtipoLabel_lmrSincambios}"/>
+                    <h:outputText value="#{lmrLogmigracionregtipoController.selected.lmrSincambios}" title="#{bundle.ViewLmrLogmigracionregtipoTitle_lmrSincambios}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{lmrLogmigracionregtipoController.destroyAndView}" value="#{bundle.ViewLmrLogmigracionregtipoDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewLmrLogmigracionregtipoEditLink}"/>
+                <br />
+                <h:commandLink action="#{lmrLogmigracionregtipoController.prepareCreate}" value="#{bundle.ViewLmrLogmigracionregtipoCreateLink}" />
+                <br />
+                <h:commandLink action="#{lmrLogmigracionregtipoController.prepareList}" value="#{bundle.ViewLmrLogmigracionregtipoShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewLmrLogmigracionregtipoIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

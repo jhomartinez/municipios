@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="./../Template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateLmrLogmigracionregtipoTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateLmrLogmigracionregtipoLabel_lmrIdlogmigracion}" for="lmrIdlogmigracion" />
+                    <h:inputText id="lmrIdlogmigracion" value="#{lmrLogmigracionregtipoController.selected.lmrIdlogmigracion}" title="#{bundle.CreateLmrLogmigracionregtipoTitle_lmrIdlogmigracion}" required="true" requiredMessage="#{bundle.CreateLmrLogmigracionregtipoRequiredMessage_lmrIdlogmigracion}"/>
+                    <h:outputLabel value="#{bundle.CreateLmrLogmigracionregtipoLabel_pmiIdproceso}" for="pmiIdproceso" />
+                    <h:inputText id="pmiIdproceso" value="#{lmrLogmigracionregtipoController.selected.pmiIdproceso}" title="#{bundle.CreateLmrLogmigracionregtipoTitle_pmiIdproceso}" />
+                    <h:outputLabel value="#{bundle.CreateLmrLogmigracionregtipoLabel_mrtIdmigracionregtipo}" for="mrtIdmigracionregtipo" />
+                    <h:inputText id="mrtIdmigracionregtipo" value="#{lmrLogmigracionregtipoController.selected.mrtIdmigracionregtipo}" title="#{bundle.CreateLmrLogmigracionregtipoTitle_mrtIdmigracionregtipo}" />
+                    <h:outputLabel value="#{bundle.CreateLmrLogmigracionregtipoLabel_lmrFechainicial}" for="lmrFechainicial" />
+                    <h:inputText id="lmrFechainicial" value="#{lmrLogmigracionregtipoController.selected.lmrFechainicial}" title="#{bundle.CreateLmrLogmigracionregtipoTitle_lmrFechainicial}" >
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.CreateLmrLogmigracionregtipoLabel_lmrFechafinal}" for="lmrFechafinal" />
+                    <h:inputText id="lmrFechafinal" value="#{lmrLogmigracionregtipoController.selected.lmrFechafinal}" title="#{bundle.CreateLmrLogmigracionregtipoTitle_lmrFechafinal}" >
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.CreateLmrLogmigracionregtipoLabel_lmrInsertados}" for="lmrInsertados" />
+                    <h:inputText id="lmrInsertados" value="#{lmrLogmigracionregtipoController.selected.lmrInsertados}" title="#{bundle.CreateLmrLogmigracionregtipoTitle_lmrInsertados}" />
+                    <h:outputLabel value="#{bundle.CreateLmrLogmigracionregtipoLabel_lmrActualizados}" for="lmrActualizados" />
+                    <h:inputText id="lmrActualizados" value="#{lmrLogmigracionregtipoController.selected.lmrActualizados}" title="#{bundle.CreateLmrLogmigracionregtipoTitle_lmrActualizados}" />
+                    <h:outputLabel value="#{bundle.CreateLmrLogmigracionregtipoLabel_lmrBorrados}" for="lmrBorrados" />
+                    <h:inputText id="lmrBorrados" value="#{lmrLogmigracionregtipoController.selected.lmrBorrados}" title="#{bundle.CreateLmrLogmigracionregtipoTitle_lmrBorrados}" />
+                    <h:outputLabel value="#{bundle.CreateLmrLogmigracionregtipoLabel_lmrErrores}" for="lmrErrores" />
+                    <h:inputText id="lmrErrores" value="#{lmrLogmigracionregtipoController.selected.lmrErrores}" title="#{bundle.CreateLmrLogmigracionregtipoTitle_lmrErrores}" />
+                    <h:outputLabel value="#{bundle.CreateLmrLogmigracionregtipoLabel_lmrEstadoRegistro}" for="lmrEstadoRegistro" />
+                    <h:inputText id="lmrEstadoRegistro" value="#{lmrLogmigracionregtipoController.selected.lmrEstadoRegistro}" title="#{bundle.CreateLmrLogmigracionregtipoTitle_lmrEstadoRegistro}" />
+                    <h:outputLabel value="#{bundle.CreateLmrLogmigracionregtipoLabel_lmrFechacreacion}" for="lmrFechacreacion" />
+                    <h:inputText id="lmrFechacreacion" value="#{lmrLogmigracionregtipoController.selected.lmrFechacreacion}" title="#{bundle.CreateLmrLogmigracionregtipoTitle_lmrFechacreacion}" >
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.CreateLmrLogmigracionregtipoLabel_lmrFechamodificacion}" for="lmrFechamodificacion" />
+                    <h:inputText id="lmrFechamodificacion" value="#{lmrLogmigracionregtipoController.selected.lmrFechamodificacion}" title="#{bundle.CreateLmrLogmigracionregtipoTitle_lmrFechamodificacion}" >
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.CreateLmrLogmigracionregtipoLabel_lmrUsuariocreacion}" for="lmrUsuariocreacion" />
+                    <h:inputText id="lmrUsuariocreacion" value="#{lmrLogmigracionregtipoController.selected.lmrUsuariocreacion}" title="#{bundle.CreateLmrLogmigracionregtipoTitle_lmrUsuariocreacion}" />
+                    <h:outputLabel value="#{bundle.CreateLmrLogmigracionregtipoLabel_lmrUsuariomodificacion}" for="lmrUsuariomodificacion" />
+                    <h:inputText id="lmrUsuariomodificacion" value="#{lmrLogmigracionregtipoController.selected.lmrUsuariomodificacion}" title="#{bundle.CreateLmrLogmigracionregtipoTitle_lmrUsuariomodificacion}" />
+                    <h:outputLabel value="#{bundle.CreateLmrLogmigracionregtipoLabel_lmrSeleccionados}" for="lmrSeleccionados" />
+                    <h:inputText id="lmrSeleccionados" value="#{lmrLogmigracionregtipoController.selected.lmrSeleccionados}" title="#{bundle.CreateLmrLogmigracionregtipoTitle_lmrSeleccionados}" />
+                    <h:outputLabel value="#{bundle.CreateLmrLogmigracionregtipoLabel_lmrSincambios}" for="lmrSincambios" />
+                    <h:inputText id="lmrSincambios" value="#{lmrLogmigracionregtipoController.selected.lmrSincambios}" title="#{bundle.CreateLmrLogmigracionregtipoTitle_lmrSincambios}" />
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{lmrLogmigracionregtipoController.create}" value="#{bundle.CreateLmrLogmigracionregtipoSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{lmrLogmigracionregtipoController.prepareList}" value="#{bundle.CreateLmrLogmigracionregtipoShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateLmrLogmigracionregtipoIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

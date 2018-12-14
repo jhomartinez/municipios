@@ -1,0 +1,19 @@
+CONEXION2=
+  (DESCRIPTION =
+    (ADDRESS_LIST =
+      (ADDRESS = (PROTOCOL = TCP)(HOST = 172.16.2.11)(PORT = 1521))
+    )
+    (CONNECT_DATA =
+      (SERVICE_NAME = calidaddb)
+    )
+  ) 
+  
+CONEXION1=
+  (DESCRIPTION =
+    (ADDRESS_LIST =
+      (ADDRESS = (PROTOCOL = TCP)(HOST = 172.16.2.12)(PORT = 1521))
+    )
+    (CONNECT_DATA =
+      (SERVICE_NAME = ftesimpro)
+    )
+  ) 
