@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="./../Template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewReporteRegistraduria3Title}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewReporteRegistraduria3Label_cedula}"/>
+                    <h:outputText value="#{reporteRegistraduria3Controller.selected.cedula}" title="#{bundle.ViewReporteRegistraduria3Title_cedula}"/>
+                    <h:outputText value="#{bundle.ViewReporteRegistraduria3Label_primerNombre}"/>
+                    <h:outputText value="#{reporteRegistraduria3Controller.selected.primerNombre}" title="#{bundle.ViewReporteRegistraduria3Title_primerNombre}"/>
+                    <h:outputText value="#{bundle.ViewReporteRegistraduria3Label_segundoNombre}"/>
+                    <h:outputText value="#{reporteRegistraduria3Controller.selected.segundoNombre}" title="#{bundle.ViewReporteRegistraduria3Title_segundoNombre}"/>
+                    <h:outputText value="#{bundle.ViewReporteRegistraduria3Label_primerApellido}"/>
+                    <h:outputText value="#{reporteRegistraduria3Controller.selected.primerApellido}" title="#{bundle.ViewReporteRegistraduria3Title_primerApellido}"/>
+                    <h:outputText value="#{bundle.ViewReporteRegistraduria3Label_segundoApellido}"/>
+                    <h:outputText value="#{reporteRegistraduria3Controller.selected.segundoApellido}" title="#{bundle.ViewReporteRegistraduria3Title_segundoApellido}"/>
+                    <h:outputText value="#{bundle.ViewReporteRegistraduria3Label_vigencia}"/>
+                    <h:outputText value="#{reporteRegistraduria3Controller.selected.vigencia}" title="#{bundle.ViewReporteRegistraduria3Title_vigencia}"/>
+                    <h:outputText value="#{bundle.ViewReporteRegistraduria3Label_fechaCarga}"/>
+                    <h:outputText value="#{reporteRegistraduria3Controller.selected.fechaCarga}" title="#{bundle.ViewReporteRegistraduria3Title_fechaCarga}">
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:outputText>
+                    <h:outputText value="#{bundle.ViewReporteRegistraduria3Label_idRepoestadis3}"/>
+                    <h:outputText value="#{reporteRegistraduria3Controller.selected.idRepoestadis3}" title="#{bundle.ViewReporteRegistraduria3Title_idRepoestadis3}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{reporteRegistraduria3Controller.destroyAndView}" value="#{bundle.ViewReporteRegistraduria3DestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewReporteRegistraduria3EditLink}"/>
+                <br />
+                <h:commandLink action="#{reporteRegistraduria3Controller.prepareCreate}" value="#{bundle.ViewReporteRegistraduria3CreateLink}" />
+                <br />
+                <h:commandLink action="#{reporteRegistraduria3Controller.prepareList}" value="#{bundle.ViewReporteRegistraduria3ShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewReporteRegistraduria3IndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

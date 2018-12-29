@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <h:outputStylesheet name="./css/default.css"/>
+        <h:outputStylesheet name="./css/cssLayout.css"/>
+        <h:outputScript name="./js/jsfcrud.js"/>
+        <title>Estadisticas</title>
+    </h:head>
+
+    <h:body>
+
+        <div id="top">
+            <ui:insert name="top">
+                <img class="background-top">
+
+                </img>
+            </ui:insert>
+        </div>
+        <div>
+            <div id="left">
+                <ui:insert name="left">
+                    <h:form>  
+                        <p:growl id="messages" showDetail="true" />
+
+                        <p:tieredMenu style="width:200px">
+                            <p:menuitem value="Estadisticas" outcome="/views/estadisticas" />
+                            <p:menuitem value="Estadisticas Migración" outcome="/views/estad_migra" />
+                            <p:separator />
+                            <p:submenu label="Gestion de Tablas" icon="pi pi-home">
+                                <p:menuitem value="LomLogMigracion"  />
+                                <p:menuitem value="MrtMigracionregtipo"  />
+                            </p:submenu>
+                            <p:menuitem value="Busqueda" outcome="/views/busqueda"  />
+                            <p:menuitem value="Ver mapa" outcome="/views/maps"  />
+                        </p:tieredMenu>
+
+                        <p:separator />
+
+                        <p:commandButton id="dynaButton" value="Show" type="button" icon="pi pi-home" />
+                        <p:tieredMenu overlay="true" trigger="dynaButton" my="left top" at="left bottom" style="width:200px">
+                            <p:submenu label="Ajax Menuitems">
+                                <p:menuitem value="Save" action="#{menuView.save}" update="messages" icon="pi pi-save" />
+                                <p:menuitem value="Update" action="#{menuView.update}" update="messages" icon="pi pi-refresh" />
+                            </p:submenu>
+                            <p:submenu label="Non-Ajax Menuitem">
+                                <p:menuitem value="Delete" action="#{menuView.delete}" update="messages" ajax="false" icon="pi pi-times" />
+                            </p:submenu>
+                            <p:submenu label="Navigations" icon="pi pi-home">
+                                <p:submenu label="Prime Links">
+                                    <p:menuitem value="Prime" url="http://www.prime.com.tr" />
+                                    <p:menuitem value="PrimeFaces" url="http://www.primefaces.org" />
+                                </p:submenu>
+                                <p:menuitem value="Mobile" />
+                            </p:submenu>
+                        </p:tieredMenu>
+                    </h:form>
+                </ui:insert>
+            </div>
+            <div id="content" class="left_content">
+                <ui:insert name="body">
+                    
+                </ui:insert>
+            </div>
+        </div>
+        <div id="bottom">
+            <ui:insert name="bottom">
+                <div class="button-div">
+                    <p>Federación Colombiana de Municipios - Construimos el Desarrollo y el Bienestar para la Paz desde lo Local</p>
+                    <p>Cra 7 N. 74-56/64 Piso 18 - PBX: (57) 1-593 40 20 Fax: (57) 1-5934027 contacto@fcm.org.co - </p>
+                    <p>fcm@fcm.org.co - Bogota D.C. - Colombia - buy article online with us Suramérica</p>
+                </div>        
+            </ui:insert>
+        </div>
+
+    </h:body>
+
+</html>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="./../Template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditReporteEstadisticasTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditReporteEstadisticasLabel_fechaPenultcarga}" for="fechaPenultcarga" />
+                    <h:inputText id="fechaPenultcarga" value="#{reporteEstadisticasController.selected.fechaPenultcarga}" title="#{bundle.EditReporteEstadisticasTitle_fechaPenultcarga}" >
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.EditReporteEstadisticasLabel_fechaUltcarga}" for="fechaUltcarga" />
+                    <h:inputText id="fechaUltcarga" value="#{reporteEstadisticasController.selected.fechaUltcarga}" title="#{bundle.EditReporteEstadisticasTitle_fechaUltcarga}" >
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.EditReporteEstadisticasLabel_canRegpenultcruze}" for="canRegpenultcruze" />
+                    <h:inputText id="canRegpenultcruze" value="#{reporteEstadisticasController.selected.canRegpenultcruze}" title="#{bundle.EditReporteEstadisticasTitle_canRegpenultcruze}" />
+                    <h:outputLabel value="#{bundle.EditReporteEstadisticasLabel_canRegultcruze}" for="canRegultcruze" />
+                    <h:inputText id="canRegultcruze" value="#{reporteEstadisticasController.selected.canRegultcruze}" title="#{bundle.EditReporteEstadisticasTitle_canRegultcruze}" />
+                    <h:outputLabel value="#{bundle.EditReporteEstadisticasLabel_rowcPenultimo}" for="rowcPenultimo" />
+                    <h:inputTextarea rows="4" cols="30" id="rowcPenultimo" value="#{reporteEstadisticasController.selected.rowcPenultimo}" title="#{bundle.EditReporteEstadisticasTitle_rowcPenultimo}" />
+                    <h:outputLabel value="#{bundle.EditReporteEstadisticasLabel_rowcUltimo}" for="rowcUltimo" />
+                    <h:inputTextarea rows="4" cols="30" id="rowcUltimo" value="#{reporteEstadisticasController.selected.rowcUltimo}" title="#{bundle.EditReporteEstadisticasTitle_rowcUltimo}" />
+                    <h:outputLabel value="#{bundle.EditReporteEstadisticasLabel_regCalifi100}" for="regCalifi100" />
+                    <h:inputText id="regCalifi100" value="#{reporteEstadisticasController.selected.regCalifi100}" title="#{bundle.EditReporteEstadisticasTitle_regCalifi100}" />
+                    <h:outputLabel value="#{bundle.EditReporteEstadisticasLabel_regCalifi9099}" for="regCalifi9099" />
+                    <h:inputText id="regCalifi9099" value="#{reporteEstadisticasController.selected.regCalifi9099}" title="#{bundle.EditReporteEstadisticasTitle_regCalifi9099}" />
+                    <h:outputLabel value="#{bundle.EditReporteEstadisticasLabel_regCalifi8090}" for="regCalifi8090" />
+                    <h:inputText id="regCalifi8090" value="#{reporteEstadisticasController.selected.regCalifi8090}" title="#{bundle.EditReporteEstadisticasTitle_regCalifi8090}" />
+                    <h:outputLabel value="#{bundle.EditReporteEstadisticasLabel_regCalifi7080}" for="regCalifi7080" />
+                    <h:inputText id="regCalifi7080" value="#{reporteEstadisticasController.selected.regCalifi7080}" title="#{bundle.EditReporteEstadisticasTitle_regCalifi7080}" />
+                    <h:outputLabel value="#{bundle.EditReporteEstadisticasLabel_regCalifi6070}" for="regCalifi6070" />
+                    <h:inputText id="regCalifi6070" value="#{reporteEstadisticasController.selected.regCalifi6070}" title="#{bundle.EditReporteEstadisticasTitle_regCalifi6070}" />
+                    <h:outputLabel value="#{bundle.EditReporteEstadisticasLabel_regCalifi5060}" for="regCalifi5060" />
+                    <h:inputText id="regCalifi5060" value="#{reporteEstadisticasController.selected.regCalifi5060}" title="#{bundle.EditReporteEstadisticasTitle_regCalifi5060}" />
+                    <h:outputLabel value="#{bundle.EditReporteEstadisticasLabel_regCalifiMen50}" for="regCalifiMen50" />
+                    <h:inputText id="regCalifiMen50" value="#{reporteEstadisticasController.selected.regCalifiMen50}" title="#{bundle.EditReporteEstadisticasTitle_regCalifiMen50}" />
+                    <h:outputLabel value="#{bundle.EditReporteEstadisticasLabel_idRepoestadis}" for="idRepoestadis" />
+                    <h:inputText id="idRepoestadis" value="#{reporteEstadisticasController.selected.idRepoestadis}" title="#{bundle.EditReporteEstadisticasTitle_idRepoestadis}" required="true" requiredMessage="#{bundle.EditReporteEstadisticasRequiredMessage_idRepoestadis}"/>
+                </h:panelGrid>
+                <h:commandLink action="#{reporteEstadisticasController.update}" value="#{bundle.EditReporteEstadisticasSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditReporteEstadisticasViewLink}"/>
+                <br />
+                <h:commandLink action="#{reporteEstadisticasController.prepareList}" value="#{bundle.EditReporteEstadisticasShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.EditReporteEstadisticasIndexLink}" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

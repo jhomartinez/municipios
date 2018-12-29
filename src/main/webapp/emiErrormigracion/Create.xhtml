@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateEmiErrormigracionTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateEmiErrormigracionLabel_emiIderrormigracion}" for="emiIderrormigracion" />
+                    <h:inputText id="emiIderrormigracion" value="#{emiErrormigracionController.selected.emiIderrormigracion}" title="#{bundle.CreateEmiErrormigracionTitle_emiIderrormigracion}" required="true" requiredMessage="#{bundle.CreateEmiErrormigracionRequiredMessage_emiIderrormigracion}"/>
+                    <h:outputLabel value="#{bundle.CreateEmiErrormigracionLabel_pmiIdproceso}" for="pmiIdproceso" />
+                    <h:inputText id="pmiIdproceso" value="#{emiErrormigracionController.selected.pmiIdproceso}" title="#{bundle.CreateEmiErrormigracionTitle_pmiIdproceso}" />
+                    <h:outputLabel value="#{bundle.CreateEmiErrormigracionLabel_mrtIdmigracionregtipo}" for="mrtIdmigracionregtipo" />
+                    <h:inputText id="mrtIdmigracionregtipo" value="#{emiErrormigracionController.selected.mrtIdmigracionregtipo}" title="#{bundle.CreateEmiErrormigracionTitle_mrtIdmigracionregtipo}" />
+                    <h:outputLabel value="#{bundle.CreateEmiErrormigracionLabel_emiFecha}" for="emiFecha" />
+                    <h:inputText id="emiFecha" value="#{emiErrormigracionController.selected.emiFecha}" title="#{bundle.CreateEmiErrormigracionTitle_emiFecha}" >
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.CreateEmiErrormigracionLabel_emiOperacion}" for="emiOperacion" />
+                    <h:inputText id="emiOperacion" value="#{emiErrormigracionController.selected.emiOperacion}" title="#{bundle.CreateEmiErrormigracionTitle_emiOperacion}" />
+                    <h:outputLabel value="#{bundle.CreateEmiErrormigracionLabel_emiMensajeerror}" for="emiMensajeerror" />
+                    <h:inputText id="emiMensajeerror" value="#{emiErrormigracionController.selected.emiMensajeerror}" title="#{bundle.CreateEmiErrormigracionTitle_emiMensajeerror}" />
+                    <h:outputLabel value="#{bundle.CreateEmiErrormigracionLabel_emiCodigoerror}" for="emiCodigoerror" />
+                    <h:inputText id="emiCodigoerror" value="#{emiErrormigracionController.selected.emiCodigoerror}" title="#{bundle.CreateEmiErrormigracionTitle_emiCodigoerror}" />
+                    <h:outputLabel value="#{bundle.CreateEmiErrormigracionLabel_emiIdregistronuevo}" for="emiIdregistronuevo" />
+                    <h:inputText id="emiIdregistronuevo" value="#{emiErrormigracionController.selected.emiIdregistronuevo}" title="#{bundle.CreateEmiErrormigracionTitle_emiIdregistronuevo}" />
+                    <h:outputLabel value="#{bundle.CreateEmiErrormigracionLabel_emiIdregistroant}" for="emiIdregistroant" />
+                    <h:inputText id="emiIdregistroant" value="#{emiErrormigracionController.selected.emiIdregistroant}" title="#{bundle.CreateEmiErrormigracionTitle_emiIdregistroant}" />
+                    <h:outputLabel value="#{bundle.CreateEmiErrormigracionLabel_emiEstadoRegistro}" for="emiEstadoRegistro" />
+                    <h:inputText id="emiEstadoRegistro" value="#{emiErrormigracionController.selected.emiEstadoRegistro}" title="#{bundle.CreateEmiErrormigracionTitle_emiEstadoRegistro}" />
+                    <h:outputLabel value="#{bundle.CreateEmiErrormigracionLabel_emiFechacreacion}" for="emiFechacreacion" />
+                    <h:inputText id="emiFechacreacion" value="#{emiErrormigracionController.selected.emiFechacreacion}" title="#{bundle.CreateEmiErrormigracionTitle_emiFechacreacion}" >
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.CreateEmiErrormigracionLabel_emiFechamodificacion}" for="emiFechamodificacion" />
+                    <h:inputText id="emiFechamodificacion" value="#{emiErrormigracionController.selected.emiFechamodificacion}" title="#{bundle.CreateEmiErrormigracionTitle_emiFechamodificacion}" >
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.CreateEmiErrormigracionLabel_emiUsuariocreacion}" for="emiUsuariocreacion" />
+                    <h:inputText id="emiUsuariocreacion" value="#{emiErrormigracionController.selected.emiUsuariocreacion}" title="#{bundle.CreateEmiErrormigracionTitle_emiUsuariocreacion}" />
+                    <h:outputLabel value="#{bundle.CreateEmiErrormigracionLabel_emiUsuariomodificacion}" for="emiUsuariomodificacion" />
+                    <h:inputText id="emiUsuariomodificacion" value="#{emiErrormigracionController.selected.emiUsuariomodificacion}" title="#{bundle.CreateEmiErrormigracionTitle_emiUsuariomodificacion}" />
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{emiErrormigracionController.create}" value="#{bundle.CreateEmiErrormigracionSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{emiErrormigracionController.prepareList}" value="#{bundle.CreateEmiErrormigracionShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateEmiErrormigracionIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

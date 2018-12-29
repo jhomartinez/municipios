@@ -17,17 +17,47 @@ h1 {
 }
 
 a:link, a:visited {
-  color: #045491;
-  font-weight : bold;
-  text-decoration: none;
+    color: #045491;
+    font-weight : bold;
+    text-decoration: none;
 }
 
 a:link:hover, a:visited:hover  {
-  color: #045491;
-  font-weight : bold;
-  text-decoration : underline;
+    color: #045491;
+    font-weight : bold;
+    text-decoration : underline;
 }
 
 .background-top {
     color: #0069b4;
 }
+
+.value {
+    font-weight: bold;
+}
+
+.chart-pastel{
+    position: center;
+    text-align: center;
+}
+
+.left {
+    text-align: left;
+}
+
+.right div {
+    float: right;
+}
+
+#form{
+    width: 100%;
+}
+
+#orientation {
+    text-align: center;
+}
+
+.ui-datalist {
+        width:300px;
+        margin-bottom: 20px;
+    }

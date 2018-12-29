@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewMrtMigracionregtipoTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewMrtMigracionregtipoLabel_mrtIdmigracionregtipo}"/>
+                    <h:outputText value="#{mrtMigracionregtipoController.selected.mrtIdmigracionregtipo}" title="#{bundle.ViewMrtMigracionregtipoTitle_mrtIdmigracionregtipo}"/>
+                    <h:outputText value="#{bundle.ViewMrtMigracionregtipoLabel_mrtDescripcion}"/>
+                    <h:outputText value="#{mrtMigracionregtipoController.selected.mrtDescripcion}" title="#{bundle.ViewMrtMigracionregtipoTitle_mrtDescripcion}"/>
+                    <h:outputText value="#{bundle.ViewMrtMigracionregtipoLabel_mrtDescripcionlarga}"/>
+                    <h:outputText value="#{mrtMigracionregtipoController.selected.mrtDescripcionlarga}" title="#{bundle.ViewMrtMigracionregtipoTitle_mrtDescripcionlarga}"/>
+                    <h:outputText value="#{bundle.ViewMrtMigracionregtipoLabel_mrtProcesoquemigra}"/>
+                    <h:outputText value="#{mrtMigracionregtipoController.selected.mrtProcesoquemigra}" title="#{bundle.ViewMrtMigracionregtipoTitle_mrtProcesoquemigra}"/>
+                    <h:outputText value="#{bundle.ViewMrtMigracionregtipoLabel_mrtFechacompilaproceso}"/>
+                    <h:outputText value="#{mrtMigracionregtipoController.selected.mrtFechacompilaproceso}" title="#{bundle.ViewMrtMigracionregtipoTitle_mrtFechacompilaproceso}">
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:outputText>
+                    <h:outputText value="#{bundle.ViewMrtMigracionregtipoLabel_mrtIdmigregtiposiguient}"/>
+                    <h:outputText value="#{mrtMigracionregtipoController.selected.mrtIdmigregtiposiguient}" title="#{bundle.ViewMrtMigracionregtipoTitle_mrtIdmigregtiposiguient}"/>
+                    <h:outputText value="#{bundle.ViewMrtMigracionregtipoLabel_mrtProcpremigra}"/>
+                    <h:outputText value="#{mrtMigracionregtipoController.selected.mrtProcpremigra}" title="#{bundle.ViewMrtMigracionregtipoTitle_mrtProcpremigra}"/>
+                    <h:outputText value="#{bundle.ViewMrtMigracionregtipoLabel_mrtProcposmigra}"/>
+                    <h:outputText value="#{mrtMigracionregtipoController.selected.mrtProcposmigra}" title="#{bundle.ViewMrtMigracionregtipoTitle_mrtProcposmigra}"/>
+                    <h:outputText value="#{bundle.ViewMrtMigracionregtipoLabel_mrtProcpreinsert}"/>
+                    <h:outputText value="#{mrtMigracionregtipoController.selected.mrtProcpreinsert}" title="#{bundle.ViewMrtMigracionregtipoTitle_mrtProcpreinsert}"/>
+                    <h:outputText value="#{bundle.ViewMrtMigracionregtipoLabel_mrtProcposinsert}"/>
+                    <h:outputText value="#{mrtMigracionregtipoController.selected.mrtProcposinsert}" title="#{bundle.ViewMrtMigracionregtipoTitle_mrtProcposinsert}"/>
+                    <h:outputText value="#{bundle.ViewMrtMigracionregtipoLabel_mrtProcpreupdate}"/>
+                    <h:outputText value="#{mrtMigracionregtipoController.selected.mrtProcpreupdate}" title="#{bundle.ViewMrtMigracionregtipoTitle_mrtProcpreupdate}"/>
+                    <h:outputText value="#{bundle.ViewMrtMigracionregtipoLabel_mrtProcposupdate}"/>
+                    <h:outputText value="#{mrtMigracionregtipoController.selected.mrtProcposupdate}" title="#{bundle.ViewMrtMigracionregtipoTitle_mrtProcposupdate}"/>
+                    <h:outputText value="#{bundle.ViewMrtMigracionregtipoLabel_mrtProcpredelete}"/>
+                    <h:outputText value="#{mrtMigracionregtipoController.selected.mrtProcpredelete}" title="#{bundle.ViewMrtMigracionregtipoTitle_mrtProcpredelete}"/>
+                    <h:outputText value="#{bundle.ViewMrtMigracionregtipoLabel_mrtProcposdelete}"/>
+                    <h:outputText value="#{mrtMigracionregtipoController.selected.mrtProcposdelete}" title="#{bundle.ViewMrtMigracionregtipoTitle_mrtProcposdelete}"/>
+                    <h:outputText value="#{bundle.ViewMrtMigracionregtipoLabel_mrtEstadoregistro}"/>
+                    <h:outputText value="#{mrtMigracionregtipoController.selected.mrtEstadoregistro}" title="#{bundle.ViewMrtMigracionregtipoTitle_mrtEstadoregistro}"/>
+                    <h:outputText value="#{bundle.ViewMrtMigracionregtipoLabel_mrtFechacreacion}"/>
+                    <h:outputText value="#{mrtMigracionregtipoController.selected.mrtFechacreacion}" title="#{bundle.ViewMrtMigracionregtipoTitle_mrtFechacreacion}">
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:outputText>
+                    <h:outputText value="#{bundle.ViewMrtMigracionregtipoLabel_mrtFechamodificacion}"/>
+                    <h:outputText value="#{mrtMigracionregtipoController.selected.mrtFechamodificacion}" title="#{bundle.ViewMrtMigracionregtipoTitle_mrtFechamodificacion}">
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:outputText>
+                    <h:outputText value="#{bundle.ViewMrtMigracionregtipoLabel_mrtUsuariocreacion}"/>
+                    <h:outputText value="#{mrtMigracionregtipoController.selected.mrtUsuariocreacion}" title="#{bundle.ViewMrtMigracionregtipoTitle_mrtUsuariocreacion}"/>
+                    <h:outputText value="#{bundle.ViewMrtMigracionregtipoLabel_mrtUsuariomodificacion}"/>
+                    <h:outputText value="#{mrtMigracionregtipoController.selected.mrtUsuariomodificacion}" title="#{bundle.ViewMrtMigracionregtipoTitle_mrtUsuariomodificacion}"/>
+                    <h:outputText value="#{bundle.ViewMrtMigracionregtipoLabel_mrtTablaorigen}"/>
+                    <h:outputText value="#{mrtMigracionregtipoController.selected.mrtTablaorigen}" title="#{bundle.ViewMrtMigracionregtipoTitle_mrtTablaorigen}"/>
+                    <h:outputText value="#{bundle.ViewMrtMigracionregtipoLabel_mrtTabladestino}"/>
+                    <h:outputText value="#{mrtMigracionregtipoController.selected.mrtTabladestino}" title="#{bundle.ViewMrtMigracionregtipoTitle_mrtTabladestino}"/>
+                    <h:outputText value="#{bundle.ViewMrtMigracionregtipoLabel_mrtDblinkorigen}"/>
+                    <h:outputText value="#{mrtMigracionregtipoController.selected.mrtDblinkorigen}" title="#{bundle.ViewMrtMigracionregtipoTitle_mrtDblinkorigen}"/>
+                    <h:outputText value="#{bundle.ViewMrtMigracionregtipoLabel_mrtDblinkdestino}"/>
+                    <h:outputText value="#{mrtMigracionregtipoController.selected.mrtDblinkdestino}" title="#{bundle.ViewMrtMigracionregtipoTitle_mrtDblinkdestino}"/>
+                    <h:outputText value="#{bundle.ViewMrtMigracionregtipoLabel_mrtLlaveorigen}"/>
+                    <h:outputText value="#{mrtMigracionregtipoController.selected.mrtLlaveorigen}" title="#{bundle.ViewMrtMigracionregtipoTitle_mrtLlaveorigen}"/>
+                    <h:outputText value="#{bundle.ViewMrtMigracionregtipoLabel_mrtComparaciondelete}"/>
+                    <h:outputText value="#{mrtMigracionregtipoController.selected.mrtComparaciondelete}" title="#{bundle.ViewMrtMigracionregtipoTitle_mrtComparaciondelete}"/>
+                    <h:outputText value="#{bundle.ViewMrtMigracionregtipoLabel_mrtEstado}"/>
+                    <h:outputText value="#{mrtMigracionregtipoController.selected.mrtEstado}" title="#{bundle.ViewMrtMigracionregtipoTitle_mrtEstado}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{mrtMigracionregtipoController.destroyAndView}" value="#{bundle.ViewMrtMigracionregtipoDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewMrtMigracionregtipoEditLink}"/>
+                <br />
+                <h:commandLink action="#{mrtMigracionregtipoController.prepareCreate}" value="#{bundle.ViewMrtMigracionregtipoCreateLink}" />
+                <br />
+                <h:commandLink action="#{mrtMigracionregtipoController.prepareList}" value="#{bundle.ViewMrtMigracionregtipoShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewMrtMigracionregtipoIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

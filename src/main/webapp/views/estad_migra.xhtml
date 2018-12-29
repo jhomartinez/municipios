@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <body>
+
+        <ui:composition template="./../templates/templateEstadisticas.xhtml">
+
+            <ui:define name="body">
+                <h2>ESTADISTICAS MIGRACIÓN</h2>
+                <p:separator/>
+                <div class="center_content">
+                    <h:form>
+                        <h2>Cantidad de registros para Hoy (fecha 26/12/2018)</h2>
+                        <p:growl id="growl" showDetail="true" />
+                        <p:chart type="bar" model="#{migracion.barModel}" style="height:400px;width:550px">
+                            <p:ajax event="itemSelect" listener="#{migracion.itemSelectBar}" update="growl" />
+                        </p:chart>
+                        <p:separator/>
+                        <p:dataList value="#{migracion.listaRegtipoHoy}" var="row" type="ordered">
+                            <f:facet name="header">
+                                Lista de Reg tipo
+                            </f:facet>
+                            #{row.mrtIdmigracionregtipo}, #{row.mrtDescripcion}
+                        </p:dataList>
+                        <p:dataTable var="row" value="#{migracion.listaErrordetalleHoy}">
+                            <p:column headerText="Id">
+                                <h:outputText value="#{row.emiIderrormigracion}" />
+                            </p:column>
+
+                            <p:column headerText="Year">
+                                <h:outputText value="#{row.mrtIdmigracionregtipo}" />
+                            </p:column>
+
+                            <p:column headerText="Brand">
+                                <h:outputText value="#{row.emiFecha}" />
+                            </p:column>
+
+                            <p:column headerText="Color">
+                                <h:outputText value="#{row.emiOperacion}" />
+                            </p:column>
+                            
+                            <p:column headerText="Color">
+                                <h:outputText value="#{row.emiMensajeerror}" />
+                            </p:column>
+                        </p:dataTable>
+                    </h:form>
+                </div>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <head>
+        <script type="text/javascript" src="../resources/js/tileLayer.js"></script>
+        <script type="text/javascript" src="../resources/oraclemapsv2.js"></script>
+        <title>Oracle Maps HTML5 API Tutorial Template</title>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width"/>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                showMap();
+            });
+
+        </script>
+    </head>
+    <body>
+        <ui:composition template="./../Template.xhtml">
+
+            <ui:define name="body">
+                <div id="map" 
+                     style="position: absolute; left:0px; top:0px; width:100%; height:100%; overflow:hidden;">
+                </div>
+            </ui:define>
+
+        </ui:composition>
+    </body>
+</html>

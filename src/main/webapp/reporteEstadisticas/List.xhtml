@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="./../Template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ListReporteEstadisticasTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:form styleClass="jsfcrud_list_form">
+                <h:panelGroup id="messagePanel" layout="block">
+                    <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                </h:panelGroup>
+                <h:outputText escape="false" value="#{bundle.ListReporteEstadisticasEmpty}" rendered="#{reporteEstadisticasController.items.rowCount == 0}"/>
+                <h:panelGroup rendered="#{reporteEstadisticasController.items.rowCount > 0}">
+                    <h:outputText value="#{reporteEstadisticasController.pagination.pageFirstItem + 1}..#{reporteEstadisticasController.pagination.pageLastItem + 1}/#{reporteEstadisticasController.pagination.itemsCount}"/>&nbsp;
+                    <h:commandLink action="#{reporteEstadisticasController.previous}" value="#{bundle.Previous} #{reporteEstadisticasController.pagination.pageSize}" rendered="#{reporteEstadisticasController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink action="#{reporteEstadisticasController.next}" value="#{bundle.Next} #{reporteEstadisticasController.pagination.pageSize}" rendered="#{reporteEstadisticasController.pagination.hasNextPage}"/>&nbsp;
+                    <h:dataTable value="#{reporteEstadisticasController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListReporteEstadisticasTitle_fechaPenultcarga}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.fechaPenultcarga}">
+                                <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                            </h:outputText>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListReporteEstadisticasTitle_fechaUltcarga}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.fechaUltcarga}">
+                                <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                            </h:outputText>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListReporteEstadisticasTitle_canRegpenultcruze}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.canRegpenultcruze}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListReporteEstadisticasTitle_canRegultcruze}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.canRegultcruze}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListReporteEstadisticasTitle_rowcPenultimo}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.rowcPenultimo}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListReporteEstadisticasTitle_rowcUltimo}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.rowcUltimo}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListReporteEstadisticasTitle_regCalifi100}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.regCalifi100}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListReporteEstadisticasTitle_regCalifi9099}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.regCalifi9099}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListReporteEstadisticasTitle_regCalifi8090}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.regCalifi8090}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListReporteEstadisticasTitle_regCalifi7080}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.regCalifi7080}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListReporteEstadisticasTitle_regCalifi6070}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.regCalifi6070}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListReporteEstadisticasTitle_regCalifi5060}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.regCalifi5060}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListReporteEstadisticasTitle_regCalifiMen50}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.regCalifiMen50}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListReporteEstadisticasTitle_idRepoestadis}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.idRepoestadis}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="&nbsp;"/>
+                            </f:facet>
+                            <h:commandLink action="#{reporteEstadisticasController.prepareView}" value="#{bundle.ListReporteEstadisticasViewLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{reporteEstadisticasController.prepareEdit}" value="#{bundle.ListReporteEstadisticasEditLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{reporteEstadisticasController.destroy}" value="#{bundle.ListReporteEstadisticasDestroyLink}"/>
+                        </h:column>
+                    </h:dataTable>
+                </h:panelGroup>
+                <br />
+                <h:commandLink action="#{reporteEstadisticasController.prepareCreate}" value="#{bundle.ListReporteEstadisticasCreateLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ListReporteEstadisticasIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

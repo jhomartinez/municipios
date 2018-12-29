@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="./../Template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewEstadisticasDocTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewEstadisticasDocLabel_fechaPenultcarga}"/>
+                    <h:outputText value="#{estadisticasDocController.selected.fechaPenultcarga}" title="#{bundle.ViewEstadisticasDocTitle_fechaPenultcarga}">
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:outputText>
+                    <h:outputText value="#{bundle.ViewEstadisticasDocLabel_fechaUltcarga}"/>
+                    <h:outputText value="#{estadisticasDocController.selected.fechaUltcarga}" title="#{bundle.ViewEstadisticasDocTitle_fechaUltcarga}">
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:outputText>
+                    <h:outputText value="#{bundle.ViewEstadisticasDocLabel_rowidPenultimo}"/>
+                    <h:outputText value="#{estadisticasDocController.selected.rowidPenultimo}" title="#{bundle.ViewEstadisticasDocTitle_rowidPenultimo}"/>
+                    <h:outputText value="#{bundle.ViewEstadisticasDocLabel_rowidUltimo}"/>
+                    <h:outputText value="#{estadisticasDocController.selected.rowidUltimo}" title="#{bundle.ViewEstadisticasDocTitle_rowidUltimo}"/>
+                    <h:outputText value="#{bundle.ViewEstadisticasDocLabel_canregCargpenulcruce}"/>
+                    <h:outputText value="#{estadisticasDocController.selected.canregCargpenulcruce}" title="#{bundle.ViewEstadisticasDocTitle_canregCargpenulcruce}"/>
+                    <h:outputText value="#{bundle.ViewEstadisticasDocLabel_canregCargulcruce}"/>
+                    <h:outputText value="#{estadisticasDocController.selected.canregCargulcruce}" title="#{bundle.ViewEstadisticasDocTitle_canregCargulcruce}"/>
+                    <h:outputText value="#{bundle.ViewEstadisticasDocLabel_idRepoestadis}"/>
+                    <h:outputText value="#{estadisticasDocController.selected.idRepoestadis}" title="#{bundle.ViewEstadisticasDocTitle_idRepoestadis}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{estadisticasDocController.destroyAndView}" value="#{bundle.ViewEstadisticasDocDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewEstadisticasDocEditLink}"/>
+                <br />
+                <h:commandLink action="#{estadisticasDocController.prepareCreate}" value="#{bundle.ViewEstadisticasDocCreateLink}" />
+                <br />
+                <h:commandLink action="#{estadisticasDocController.prepareList}" value="#{bundle.ViewEstadisticasDocShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewEstadisticasDocIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

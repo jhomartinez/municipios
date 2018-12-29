@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewEmiErrormigracionTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewEmiErrormigracionLabel_emiIderrormigracion}"/>
+                    <h:outputText value="#{emiErrormigracionController.selected.emiIderrormigracion}" title="#{bundle.ViewEmiErrormigracionTitle_emiIderrormigracion}"/>
+                    <h:outputText value="#{bundle.ViewEmiErrormigracionLabel_pmiIdproceso}"/>
+                    <h:outputText value="#{emiErrormigracionController.selected.pmiIdproceso}" title="#{bundle.ViewEmiErrormigracionTitle_pmiIdproceso}"/>
+                    <h:outputText value="#{bundle.ViewEmiErrormigracionLabel_mrtIdmigracionregtipo}"/>
+                    <h:outputText value="#{emiErrormigracionController.selected.mrtIdmigracionregtipo}" title="#{bundle.ViewEmiErrormigracionTitle_mrtIdmigracionregtipo}"/>
+                    <h:outputText value="#{bundle.ViewEmiErrormigracionLabel_emiFecha}"/>
+                    <h:outputText value="#{emiErrormigracionController.selected.emiFecha}" title="#{bundle.ViewEmiErrormigracionTitle_emiFecha}">
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:outputText>
+                    <h:outputText value="#{bundle.ViewEmiErrormigracionLabel_emiOperacion}"/>
+                    <h:outputText value="#{emiErrormigracionController.selected.emiOperacion}" title="#{bundle.ViewEmiErrormigracionTitle_emiOperacion}"/>
+                    <h:outputText value="#{bundle.ViewEmiErrormigracionLabel_emiMensajeerror}"/>
+                    <h:outputText value="#{emiErrormigracionController.selected.emiMensajeerror}" title="#{bundle.ViewEmiErrormigracionTitle_emiMensajeerror}"/>
+                    <h:outputText value="#{bundle.ViewEmiErrormigracionLabel_emiCodigoerror}"/>
+                    <h:outputText value="#{emiErrormigracionController.selected.emiCodigoerror}" title="#{bundle.ViewEmiErrormigracionTitle_emiCodigoerror}"/>
+                    <h:outputText value="#{bundle.ViewEmiErrormigracionLabel_emiIdregistronuevo}"/>
+                    <h:outputText value="#{emiErrormigracionController.selected.emiIdregistronuevo}" title="#{bundle.ViewEmiErrormigracionTitle_emiIdregistronuevo}"/>
+                    <h:outputText value="#{bundle.ViewEmiErrormigracionLabel_emiIdregistroant}"/>
+                    <h:outputText value="#{emiErrormigracionController.selected.emiIdregistroant}" title="#{bundle.ViewEmiErrormigracionTitle_emiIdregistroant}"/>
+                    <h:outputText value="#{bundle.ViewEmiErrormigracionLabel_emiEstadoRegistro}"/>
+                    <h:outputText value="#{emiErrormigracionController.selected.emiEstadoRegistro}" title="#{bundle.ViewEmiErrormigracionTitle_emiEstadoRegistro}"/>
+                    <h:outputText value="#{bundle.ViewEmiErrormigracionLabel_emiFechacreacion}"/>
+                    <h:outputText value="#{emiErrormigracionController.selected.emiFechacreacion}" title="#{bundle.ViewEmiErrormigracionTitle_emiFechacreacion}">
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:outputText>
+                    <h:outputText value="#{bundle.ViewEmiErrormigracionLabel_emiFechamodificacion}"/>
+                    <h:outputText value="#{emiErrormigracionController.selected.emiFechamodificacion}" title="#{bundle.ViewEmiErrormigracionTitle_emiFechamodificacion}">
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:outputText>
+                    <h:outputText value="#{bundle.ViewEmiErrormigracionLabel_emiUsuariocreacion}"/>
+                    <h:outputText value="#{emiErrormigracionController.selected.emiUsuariocreacion}" title="#{bundle.ViewEmiErrormigracionTitle_emiUsuariocreacion}"/>
+                    <h:outputText value="#{bundle.ViewEmiErrormigracionLabel_emiUsuariomodificacion}"/>
+                    <h:outputText value="#{emiErrormigracionController.selected.emiUsuariomodificacion}" title="#{bundle.ViewEmiErrormigracionTitle_emiUsuariomodificacion}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{emiErrormigracionController.destroyAndView}" value="#{bundle.ViewEmiErrormigracionDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewEmiErrormigracionEditLink}"/>
+                <br />
+                <h:commandLink action="#{emiErrormigracionController.prepareCreate}" value="#{bundle.ViewEmiErrormigracionCreateLink}" />
+                <br />
+                <h:commandLink action="#{emiErrormigracionController.prepareList}" value="#{bundle.ViewEmiErrormigracionShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewEmiErrormigracionIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

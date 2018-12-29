@@ -16,6 +16,7 @@ import javax.persistence.PersistenceContext;
  */
 @Stateless
 public class LomLogmigracionFacade extends AbstractFacade<LomLogmigracion> {
+
     @PersistenceContext(unitName = "DBBISA")
     private EntityManager em;
 

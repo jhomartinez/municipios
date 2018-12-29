@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="./../Template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewReporteEstadisticasTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewReporteEstadisticasLabel_fechaPenultcarga}"/>
+                    <h:outputText value="#{reporteEstadisticasController.selected.fechaPenultcarga}" title="#{bundle.ViewReporteEstadisticasTitle_fechaPenultcarga}">
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:outputText>
+                    <h:outputText value="#{bundle.ViewReporteEstadisticasLabel_fechaUltcarga}"/>
+                    <h:outputText value="#{reporteEstadisticasController.selected.fechaUltcarga}" title="#{bundle.ViewReporteEstadisticasTitle_fechaUltcarga}">
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:outputText>
+                    <h:outputText value="#{bundle.ViewReporteEstadisticasLabel_canRegpenultcruze}"/>
+                    <h:outputText value="#{reporteEstadisticasController.selected.canRegpenultcruze}" title="#{bundle.ViewReporteEstadisticasTitle_canRegpenultcruze}"/>
+                    <h:outputText value="#{bundle.ViewReporteEstadisticasLabel_canRegultcruze}"/>
+                    <h:outputText value="#{reporteEstadisticasController.selected.canRegultcruze}" title="#{bundle.ViewReporteEstadisticasTitle_canRegultcruze}"/>
+                    <h:outputText value="#{bundle.ViewReporteEstadisticasLabel_rowcPenultimo}"/>
+                    <h:outputText value="#{reporteEstadisticasController.selected.rowcPenultimo}" title="#{bundle.ViewReporteEstadisticasTitle_rowcPenultimo}"/>
+                    <h:outputText value="#{bundle.ViewReporteEstadisticasLabel_rowcUltimo}"/>
+                    <h:outputText value="#{reporteEstadisticasController.selected.rowcUltimo}" title="#{bundle.ViewReporteEstadisticasTitle_rowcUltimo}"/>
+                    <h:outputText value="#{bundle.ViewReporteEstadisticasLabel_regCalifi100}"/>
+                    <h:outputText value="#{reporteEstadisticasController.selected.regCalifi100}" title="#{bundle.ViewReporteEstadisticasTitle_regCalifi100}"/>
+                    <h:outputText value="#{bundle.ViewReporteEstadisticasLabel_regCalifi9099}"/>
+                    <h:outputText value="#{reporteEstadisticasController.selected.regCalifi9099}" title="#{bundle.ViewReporteEstadisticasTitle_regCalifi9099}"/>
+                    <h:outputText value="#{bundle.ViewReporteEstadisticasLabel_regCalifi8090}"/>
+                    <h:outputText value="#{reporteEstadisticasController.selected.regCalifi8090}" title="#{bundle.ViewReporteEstadisticasTitle_regCalifi8090}"/>
+                    <h:outputText value="#{bundle.ViewReporteEstadisticasLabel_regCalifi7080}"/>
+                    <h:outputText value="#{reporteEstadisticasController.selected.regCalifi7080}" title="#{bundle.ViewReporteEstadisticasTitle_regCalifi7080}"/>
+                    <h:outputText value="#{bundle.ViewReporteEstadisticasLabel_regCalifi6070}"/>
+                    <h:outputText value="#{reporteEstadisticasController.selected.regCalifi6070}" title="#{bundle.ViewReporteEstadisticasTitle_regCalifi6070}"/>
+                    <h:outputText value="#{bundle.ViewReporteEstadisticasLabel_regCalifi5060}"/>
+                    <h:outputText value="#{reporteEstadisticasController.selected.regCalifi5060}" title="#{bundle.ViewReporteEstadisticasTitle_regCalifi5060}"/>
+                    <h:outputText value="#{bundle.ViewReporteEstadisticasLabel_regCalifiMen50}"/>
+                    <h:outputText value="#{reporteEstadisticasController.selected.regCalifiMen50}" title="#{bundle.ViewReporteEstadisticasTitle_regCalifiMen50}"/>
+                    <h:outputText value="#{bundle.ViewReporteEstadisticasLabel_idRepoestadis}"/>
+                    <h:outputText value="#{reporteEstadisticasController.selected.idRepoestadis}" title="#{bundle.ViewReporteEstadisticasTitle_idRepoestadis}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{reporteEstadisticasController.destroyAndView}" value="#{bundle.ViewReporteEstadisticasDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewReporteEstadisticasEditLink}"/>
+                <br />
+                <h:commandLink action="#{reporteEstadisticasController.prepareCreate}" value="#{bundle.ViewReporteEstadisticasCreateLink}" />
+                <br />
+                <h:commandLink action="#{reporteEstadisticasController.prepareList}" value="#{bundle.ViewReporteEstadisticasShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewReporteEstadisticasIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="./../Template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ListMrtMigracionregtipoTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:form styleClass="jsfcrud_list_form">
+                <h:panelGroup id="messagePanel" layout="block">
+                    <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                </h:panelGroup>
+                <h:outputText escape="false" value="#{bundle.ListMrtMigracionregtipoEmpty}" rendered="#{mrtMigracionregtipoController.items.rowCount == 0}"/>
+                <h:panelGroup rendered="#{mrtMigracionregtipoController.items.rowCount > 0}">
+                    <h:outputText value="#{mrtMigracionregtipoController.pagination.pageFirstItem + 1}..#{mrtMigracionregtipoController.pagination.pageLastItem + 1}/#{mrtMigracionregtipoController.pagination.itemsCount}"/>&nbsp;
+                    <h:commandLink action="#{mrtMigracionregtipoController.previous}" value="#{bundle.Previous} #{mrtMigracionregtipoController.pagination.pageSize}" rendered="#{mrtMigracionregtipoController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink action="#{mrtMigracionregtipoController.next}" value="#{bundle.Next} #{mrtMigracionregtipoController.pagination.pageSize}" rendered="#{mrtMigracionregtipoController.pagination.hasNextPage}"/>&nbsp;
+                    <h:dataTable value="#{mrtMigracionregtipoController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMrtMigracionregtipoTitle_mrtIdmigracionregtipo}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.mrtIdmigracionregtipo}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMrtMigracionregtipoTitle_mrtDescripcion}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.mrtDescripcion}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMrtMigracionregtipoTitle_mrtDescripcionlarga}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.mrtDescripcionlarga}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMrtMigracionregtipoTitle_mrtProcesoquemigra}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.mrtProcesoquemigra}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMrtMigracionregtipoTitle_mrtFechacompilaproceso}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.mrtFechacompilaproceso}">
+                                <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                            </h:outputText>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMrtMigracionregtipoTitle_mrtIdmigregtiposiguient}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.mrtIdmigregtiposiguient}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMrtMigracionregtipoTitle_mrtProcpremigra}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.mrtProcpremigra}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMrtMigracionregtipoTitle_mrtProcposmigra}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.mrtProcposmigra}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMrtMigracionregtipoTitle_mrtProcpreinsert}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.mrtProcpreinsert}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMrtMigracionregtipoTitle_mrtProcposinsert}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.mrtProcposinsert}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMrtMigracionregtipoTitle_mrtProcpreupdate}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.mrtProcpreupdate}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMrtMigracionregtipoTitle_mrtProcposupdate}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.mrtProcposupdate}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMrtMigracionregtipoTitle_mrtProcpredelete}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.mrtProcpredelete}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMrtMigracionregtipoTitle_mrtProcposdelete}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.mrtProcposdelete}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMrtMigracionregtipoTitle_mrtEstadoregistro}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.mrtEstadoregistro}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMrtMigracionregtipoTitle_mrtFechacreacion}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.mrtFechacreacion}">
+                                <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                            </h:outputText>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMrtMigracionregtipoTitle_mrtFechamodificacion}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.mrtFechamodificacion}">
+                                <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                            </h:outputText>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMrtMigracionregtipoTitle_mrtUsuariocreacion}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.mrtUsuariocreacion}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMrtMigracionregtipoTitle_mrtUsuariomodificacion}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.mrtUsuariomodificacion}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMrtMigracionregtipoTitle_mrtTablaorigen}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.mrtTablaorigen}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMrtMigracionregtipoTitle_mrtTabladestino}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.mrtTabladestino}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMrtMigracionregtipoTitle_mrtDblinkorigen}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.mrtDblinkorigen}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMrtMigracionregtipoTitle_mrtDblinkdestino}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.mrtDblinkdestino}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMrtMigracionregtipoTitle_mrtLlaveorigen}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.mrtLlaveorigen}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMrtMigracionregtipoTitle_mrtComparaciondelete}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.mrtComparaciondelete}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMrtMigracionregtipoTitle_mrtEstado}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.mrtEstado}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="&nbsp;"/>
+                            </f:facet>
+                            <h:commandLink action="#{mrtMigracionregtipoController.prepareView}" value="#{bundle.ListMrtMigracionregtipoViewLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{mrtMigracionregtipoController.prepareEdit}" value="#{bundle.ListMrtMigracionregtipoEditLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{mrtMigracionregtipoController.destroy}" value="#{bundle.ListMrtMigracionregtipoDestroyLink}"/>
+                        </h:column>
+                    </h:dataTable>
+                </h:panelGroup>
+                <br />
+                <h:commandLink action="#{mrtMigracionregtipoController.prepareCreate}" value="#{bundle.ListMrtMigracionregtipoCreateLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ListMrtMigracionregtipoIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

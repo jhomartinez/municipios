@@ -21,14 +21,13 @@ import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.validation.Schema;
 
 /**
  *
  * @author JHON
  */
 @Entity
-@Table(name = "LMR_LOGMIGRACIONREGTIPO", schema="CALIDAD")
+@Table(name = "LMR_LOGMIGRACIONREGTIPO", schema = "CALIDAD")
 @XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "LmrLogmigracionregtipo.findAll", query = "SELECT l FROM LmrLogmigracionregtipo l"),
@@ -61,10 +60,10 @@ public class LmrLogmigracionregtipo implements Serializable {
     @Column(name = "MRT_IDMIGRACIONREGTIPO")
     private BigInteger mrtIdmigracionregtipo;
     @Column(name = "LMR_FECHAINICIAL")
-    @Temporal(TemporalType.TIMESTAMP)
+    @Temporal(TemporalType.DATE)
     private Date lmrFechainicial;
     @Column(name = "LMR_FECHAFINAL")
-    @Temporal(TemporalType.TIMESTAMP)
+    @Temporal(TemporalType.DATE)
     private Date lmrFechafinal;
     @Column(name = "LMR_INSERTADOS")
     private BigInteger lmrInsertados;
@@ -250,7 +249,7 @@ public class LmrLogmigracionregtipo implements Serializable {
 
     @Override
     public String toString() {
-        return "com.bisacorporation.entities.LmrLogmigracionregtipo[ lmrIdlogmigracion=" + lmrIdlogmigracion + " ]";
+        return super.toString();
     }
     
 }

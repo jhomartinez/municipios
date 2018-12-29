@@ -13,4 +13,9 @@
             <var>bundle</var>
         </resource-bundle>
     </application>
+    <managed-bean>
+        <managed-bean-name>migracion</managed-bean-name>
+        <managed-bean-class>com.bisacorporation.controller.Migracion</managed-bean-class>
+        <managed-bean-scope>application</managed-bean-scope>
+    </managed-bean>
 </faces-config>

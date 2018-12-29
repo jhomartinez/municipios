@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditMigMigracionTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditMigMigracionLabel_migIdmigracion}" for="migIdmigracion" />
+                    <h:inputText id="migIdmigracion" value="#{migMigracionController.selected.migIdmigracion}" title="#{bundle.EditMigMigracionTitle_migIdmigracion}" required="true" requiredMessage="#{bundle.EditMigMigracionRequiredMessage_migIdmigracion}"/>
+                    <h:outputLabel value="#{bundle.EditMigMigracionLabel_migDescripcion}" for="migDescripcion" />
+                    <h:inputText id="migDescripcion" value="#{migMigracionController.selected.migDescripcion}" title="#{bundle.EditMigMigracionTitle_migDescripcion}" />
+                    <h:outputLabel value="#{bundle.EditMigMigracionLabel_mrtIdmigracionregtipoini}" for="mrtIdmigracionregtipoini" />
+                    <h:inputText id="mrtIdmigracionregtipoini" value="#{migMigracionController.selected.mrtIdmigracionregtipoini}" title="#{bundle.EditMigMigracionTitle_mrtIdmigracionregtipoini}" />
+                    <h:outputLabel value="#{bundle.EditMigMigracionLabel_migProcposmigracion}" for="migProcposmigracion" />
+                    <h:inputText id="migProcposmigracion" value="#{migMigracionController.selected.migProcposmigracion}" title="#{bundle.EditMigMigracionTitle_migProcposmigracion}" />
+                    <h:outputLabel value="#{bundle.EditMigMigracionLabel_migProcpremigracion}" for="migProcpremigracion" />
+                    <h:inputText id="migProcpremigracion" value="#{migMigracionController.selected.migProcpremigracion}" title="#{bundle.EditMigMigracionTitle_migProcpremigracion}" />
+                    <h:outputLabel value="#{bundle.EditMigMigracionLabel_mrtIdmigracionregtipofin}" for="mrtIdmigracionregtipofin" />
+                    <h:inputText id="mrtIdmigracionregtipofin" value="#{migMigracionController.selected.mrtIdmigracionregtipofin}" title="#{bundle.EditMigMigracionTitle_mrtIdmigracionregtipofin}" />
+                    <h:outputLabel value="#{bundle.EditMigMigracionLabel_migEstadomigracion}" for="migEstadomigracion" />
+                    <h:inputText id="migEstadomigracion" value="#{migMigracionController.selected.migEstadomigracion}" title="#{bundle.EditMigMigracionTitle_migEstadomigracion}" />
+                </h:panelGrid>
+                <h:commandLink action="#{migMigracionController.update}" value="#{bundle.EditMigMigracionSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditMigMigracionViewLink}"/>
+                <br />
+                <h:commandLink action="#{migMigracionController.prepareList}" value="#{bundle.EditMigMigracionShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.EditMigMigracionIndexLink}" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

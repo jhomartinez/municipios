@@ -16,6 +16,7 @@ import javax.persistence.PersistenceContext;
  */
 @Stateless
 public class LmrLogmigracionregtipoFacade extends AbstractFacade<LmrLogmigracionregtipo> {
+
     @PersistenceContext(unitName = "DBBISA")
     private EntityManager em;
 

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ListEmiErrormigracionTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:form styleClass="jsfcrud_list_form">
+                <h:panelGroup id="messagePanel" layout="block">
+                    <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                </h:panelGroup>
+                <h:outputText escape="false" value="#{bundle.ListEmiErrormigracionEmpty}" rendered="#{emiErrormigracionController.items.rowCount == 0}"/>
+                <h:panelGroup rendered="#{emiErrormigracionController.items.rowCount > 0}">
+                    <h:outputText value="#{emiErrormigracionController.pagination.pageFirstItem + 1}..#{emiErrormigracionController.pagination.pageLastItem + 1}/#{emiErrormigracionController.pagination.itemsCount}"/>&nbsp;
+                    <h:commandLink action="#{emiErrormigracionController.previous}" value="#{bundle.Previous} #{emiErrormigracionController.pagination.pageSize}" rendered="#{emiErrormigracionController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink action="#{emiErrormigracionController.next}" value="#{bundle.Next} #{emiErrormigracionController.pagination.pageSize}" rendered="#{emiErrormigracionController.pagination.hasNextPage}"/>&nbsp;
+                    <h:dataTable value="#{emiErrormigracionController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListEmiErrormigracionTitle_emiIderrormigracion}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.emiIderrormigracion}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListEmiErrormigracionTitle_pmiIdproceso}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.pmiIdproceso}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListEmiErrormigracionTitle_mrtIdmigracionregtipo}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.mrtIdmigracionregtipo}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListEmiErrormigracionTitle_emiFecha}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.emiFecha}">
+                                <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                            </h:outputText>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListEmiErrormigracionTitle_emiOperacion}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.emiOperacion}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListEmiErrormigracionTitle_emiMensajeerror}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.emiMensajeerror}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListEmiErrormigracionTitle_emiCodigoerror}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.emiCodigoerror}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListEmiErrormigracionTitle_emiIdregistronuevo}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.emiIdregistronuevo}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListEmiErrormigracionTitle_emiIdregistroant}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.emiIdregistroant}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListEmiErrormigracionTitle_emiEstadoRegistro}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.emiEstadoRegistro}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListEmiErrormigracionTitle_emiFechacreacion}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.emiFechacreacion}">
+                                <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                            </h:outputText>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListEmiErrormigracionTitle_emiFechamodificacion}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.emiFechamodificacion}">
+                                <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                            </h:outputText>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListEmiErrormigracionTitle_emiUsuariocreacion}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.emiUsuariocreacion}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListEmiErrormigracionTitle_emiUsuariomodificacion}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.emiUsuariomodificacion}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="&nbsp;"/>
+                            </f:facet>
+                            <h:commandLink action="#{emiErrormigracionController.prepareView}" value="#{bundle.ListEmiErrormigracionViewLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{emiErrormigracionController.prepareEdit}" value="#{bundle.ListEmiErrormigracionEditLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{emiErrormigracionController.destroy}" value="#{bundle.ListEmiErrormigracionDestroyLink}"/>
+                        </h:column>
+                    </h:dataTable>
+                </h:panelGroup>
+                <br />
+                <h:commandLink action="#{emiErrormigracionController.prepareCreate}" value="#{bundle.ListEmiErrormigracionCreateLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ListEmiErrormigracionIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

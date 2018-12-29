@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditMrtMigracionregtipoTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditMrtMigracionregtipoLabel_mrtIdmigracionregtipo}" for="mrtIdmigracionregtipo" />
+                    <h:inputText id="mrtIdmigracionregtipo" value="#{mrtMigracionregtipoController.selected.mrtIdmigracionregtipo}" title="#{bundle.EditMrtMigracionregtipoTitle_mrtIdmigracionregtipo}" required="true" requiredMessage="#{bundle.EditMrtMigracionregtipoRequiredMessage_mrtIdmigracionregtipo}"/>
+                    <h:outputLabel value="#{bundle.EditMrtMigracionregtipoLabel_mrtDescripcion}" for="mrtDescripcion" />
+                    <h:inputText id="mrtDescripcion" value="#{mrtMigracionregtipoController.selected.mrtDescripcion}" title="#{bundle.EditMrtMigracionregtipoTitle_mrtDescripcion}" required="true" requiredMessage="#{bundle.EditMrtMigracionregtipoRequiredMessage_mrtDescripcion}"/>
+                    <h:outputLabel value="#{bundle.EditMrtMigracionregtipoLabel_mrtDescripcionlarga}" for="mrtDescripcionlarga" />
+                    <h:inputText id="mrtDescripcionlarga" value="#{mrtMigracionregtipoController.selected.mrtDescripcionlarga}" title="#{bundle.EditMrtMigracionregtipoTitle_mrtDescripcionlarga}" />
+                    <h:outputLabel value="#{bundle.EditMrtMigracionregtipoLabel_mrtProcesoquemigra}" for="mrtProcesoquemigra" />
+                    <h:inputText id="mrtProcesoquemigra" value="#{mrtMigracionregtipoController.selected.mrtProcesoquemigra}" title="#{bundle.EditMrtMigracionregtipoTitle_mrtProcesoquemigra}" />
+                    <h:outputLabel value="#{bundle.EditMrtMigracionregtipoLabel_mrtFechacompilaproceso}" for="mrtFechacompilaproceso" />
+                    <h:inputText id="mrtFechacompilaproceso" value="#{mrtMigracionregtipoController.selected.mrtFechacompilaproceso}" title="#{bundle.EditMrtMigracionregtipoTitle_mrtFechacompilaproceso}" >
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.EditMrtMigracionregtipoLabel_mrtIdmigregtiposiguient}" for="mrtIdmigregtiposiguient" />
+                    <h:inputText id="mrtIdmigregtiposiguient" value="#{mrtMigracionregtipoController.selected.mrtIdmigregtiposiguient}" title="#{bundle.EditMrtMigracionregtipoTitle_mrtIdmigregtiposiguient}" />
+                    <h:outputLabel value="#{bundle.EditMrtMigracionregtipoLabel_mrtProcpremigra}" for="mrtProcpremigra" />
+                    <h:inputText id="mrtProcpremigra" value="#{mrtMigracionregtipoController.selected.mrtProcpremigra}" title="#{bundle.EditMrtMigracionregtipoTitle_mrtProcpremigra}" />
+                    <h:outputLabel value="#{bundle.EditMrtMigracionregtipoLabel_mrtProcposmigra}" for="mrtProcposmigra" />
+                    <h:inputText id="mrtProcposmigra" value="#{mrtMigracionregtipoController.selected.mrtProcposmigra}" title="#{bundle.EditMrtMigracionregtipoTitle_mrtProcposmigra}" />
+                    <h:outputLabel value="#{bundle.EditMrtMigracionregtipoLabel_mrtProcpreinsert}" for="mrtProcpreinsert" />
+                    <h:inputText id="mrtProcpreinsert" value="#{mrtMigracionregtipoController.selected.mrtProcpreinsert}" title="#{bundle.EditMrtMigracionregtipoTitle_mrtProcpreinsert}" />
+                    <h:outputLabel value="#{bundle.EditMrtMigracionregtipoLabel_mrtProcposinsert}" for="mrtProcposinsert" />
+                    <h:inputText id="mrtProcposinsert" value="#{mrtMigracionregtipoController.selected.mrtProcposinsert}" title="#{bundle.EditMrtMigracionregtipoTitle_mrtProcposinsert}" />
+                    <h:outputLabel value="#{bundle.EditMrtMigracionregtipoLabel_mrtProcpreupdate}" for="mrtProcpreupdate" />
+                    <h:inputText id="mrtProcpreupdate" value="#{mrtMigracionregtipoController.selected.mrtProcpreupdate}" title="#{bundle.EditMrtMigracionregtipoTitle_mrtProcpreupdate}" />
+                    <h:outputLabel value="#{bundle.EditMrtMigracionregtipoLabel_mrtProcposupdate}" for="mrtProcposupdate" />
+                    <h:inputText id="mrtProcposupdate" value="#{mrtMigracionregtipoController.selected.mrtProcposupdate}" title="#{bundle.EditMrtMigracionregtipoTitle_mrtProcposupdate}" />
+                    <h:outputLabel value="#{bundle.EditMrtMigracionregtipoLabel_mrtProcpredelete}" for="mrtProcpredelete" />
+                    <h:inputText id="mrtProcpredelete" value="#{mrtMigracionregtipoController.selected.mrtProcpredelete}" title="#{bundle.EditMrtMigracionregtipoTitle_mrtProcpredelete}" />
+                    <h:outputLabel value="#{bundle.EditMrtMigracionregtipoLabel_mrtProcposdelete}" for="mrtProcposdelete" />
+                    <h:inputText id="mrtProcposdelete" value="#{mrtMigracionregtipoController.selected.mrtProcposdelete}" title="#{bundle.EditMrtMigracionregtipoTitle_mrtProcposdelete}" />
+                    <h:outputLabel value="#{bundle.EditMrtMigracionregtipoLabel_mrtEstadoregistro}" for="mrtEstadoregistro" />
+                    <h:inputText id="mrtEstadoregistro" value="#{mrtMigracionregtipoController.selected.mrtEstadoregistro}" title="#{bundle.EditMrtMigracionregtipoTitle_mrtEstadoregistro}" required="true" requiredMessage="#{bundle.EditMrtMigracionregtipoRequiredMessage_mrtEstadoregistro}"/>
+                    <h:outputLabel value="#{bundle.EditMrtMigracionregtipoLabel_mrtFechacreacion}" for="mrtFechacreacion" />
+                    <h:inputText id="mrtFechacreacion" value="#{mrtMigracionregtipoController.selected.mrtFechacreacion}" title="#{bundle.EditMrtMigracionregtipoTitle_mrtFechacreacion}" required="true" requiredMessage="#{bundle.EditMrtMigracionregtipoRequiredMessage_mrtFechacreacion}">
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.EditMrtMigracionregtipoLabel_mrtFechamodificacion}" for="mrtFechamodificacion" />
+                    <h:inputText id="mrtFechamodificacion" value="#{mrtMigracionregtipoController.selected.mrtFechamodificacion}" title="#{bundle.EditMrtMigracionregtipoTitle_mrtFechamodificacion}" required="true" requiredMessage="#{bundle.EditMrtMigracionregtipoRequiredMessage_mrtFechamodificacion}">
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.EditMrtMigracionregtipoLabel_mrtUsuariocreacion}" for="mrtUsuariocreacion" />
+                    <h:inputText id="mrtUsuariocreacion" value="#{mrtMigracionregtipoController.selected.mrtUsuariocreacion}" title="#{bundle.EditMrtMigracionregtipoTitle_mrtUsuariocreacion}" required="true" requiredMessage="#{bundle.EditMrtMigracionregtipoRequiredMessage_mrtUsuariocreacion}"/>
+                    <h:outputLabel value="#{bundle.EditMrtMigracionregtipoLabel_mrtUsuariomodificacion}" for="mrtUsuariomodificacion" />
+                    <h:inputText id="mrtUsuariomodificacion" value="#{mrtMigracionregtipoController.selected.mrtUsuariomodificacion}" title="#{bundle.EditMrtMigracionregtipoTitle_mrtUsuariomodificacion}" required="true" requiredMessage="#{bundle.EditMrtMigracionregtipoRequiredMessage_mrtUsuariomodificacion}"/>
+                    <h:outputLabel value="#{bundle.EditMrtMigracionregtipoLabel_mrtTablaorigen}" for="mrtTablaorigen" />
+                    <h:inputText id="mrtTablaorigen" value="#{mrtMigracionregtipoController.selected.mrtTablaorigen}" title="#{bundle.EditMrtMigracionregtipoTitle_mrtTablaorigen}" />
+                    <h:outputLabel value="#{bundle.EditMrtMigracionregtipoLabel_mrtTabladestino}" for="mrtTabladestino" />
+                    <h:inputText id="mrtTabladestino" value="#{mrtMigracionregtipoController.selected.mrtTabladestino}" title="#{bundle.EditMrtMigracionregtipoTitle_mrtTabladestino}" />
+                    <h:outputLabel value="#{bundle.EditMrtMigracionregtipoLabel_mrtDblinkorigen}" for="mrtDblinkorigen" />
+                    <h:inputText id="mrtDblinkorigen" value="#{mrtMigracionregtipoController.selected.mrtDblinkorigen}" title="#{bundle.EditMrtMigracionregtipoTitle_mrtDblinkorigen}" />
+                    <h:outputLabel value="#{bundle.EditMrtMigracionregtipoLabel_mrtDblinkdestino}" for="mrtDblinkdestino" />
+                    <h:inputText id="mrtDblinkdestino" value="#{mrtMigracionregtipoController.selected.mrtDblinkdestino}" title="#{bundle.EditMrtMigracionregtipoTitle_mrtDblinkdestino}" />
+                    <h:outputLabel value="#{bundle.EditMrtMigracionregtipoLabel_mrtLlaveorigen}" for="mrtLlaveorigen" />
+                    <h:inputText id="mrtLlaveorigen" value="#{mrtMigracionregtipoController.selected.mrtLlaveorigen}" title="#{bundle.EditMrtMigracionregtipoTitle_mrtLlaveorigen}" />
+                    <h:outputLabel value="#{bundle.EditMrtMigracionregtipoLabel_mrtComparaciondelete}" for="mrtComparaciondelete" />
+                    <h:inputText id="mrtComparaciondelete" value="#{mrtMigracionregtipoController.selected.mrtComparaciondelete}" title="#{bundle.EditMrtMigracionregtipoTitle_mrtComparaciondelete}" />
+                    <h:outputLabel value="#{bundle.EditMrtMigracionregtipoLabel_mrtEstado}" for="mrtEstado" />
+                    <h:inputText id="mrtEstado" value="#{mrtMigracionregtipoController.selected.mrtEstado}" title="#{bundle.EditMrtMigracionregtipoTitle_mrtEstado}" />
+                </h:panelGrid>
+                <h:commandLink action="#{mrtMigracionregtipoController.update}" value="#{bundle.EditMrtMigracionregtipoSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditMrtMigracionregtipoViewLink}"/>
+                <br />
+                <h:commandLink action="#{mrtMigracionregtipoController.prepareList}" value="#{bundle.EditMrtMigracionregtipoShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.EditMrtMigracionregtipoIndexLink}" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

@@ -9,10 +9,6 @@
 
         <ui:composition template="./../Template.xhtml">
 
-            <ui:define name="left">
-
-            </ui:define>
-
             <ui:define name="body">
                 <div id="contentTable">
                     <p:dataTable var="car" value="#{dtBasicView.cars}" >
@@ -37,9 +33,6 @@
                             </p:commandButton>
                         </p:column>
                     </p:dataTable>
-                </div>
-                <div class="chart">
-                    <p:chart type="bar" model="#{chartView.barModel}" style="height:300px"/>
                 </div>
             </ui:define>
 

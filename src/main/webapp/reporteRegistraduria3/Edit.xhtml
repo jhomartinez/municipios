@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="./../Template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditReporteRegistraduria3Title}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditReporteRegistraduria3Label_cedula}" for="cedula" />
+                    <h:inputText id="cedula" value="#{reporteRegistraduria3Controller.selected.cedula}" title="#{bundle.EditReporteRegistraduria3Title_cedula}" />
+                    <h:outputLabel value="#{bundle.EditReporteRegistraduria3Label_primerNombre}" for="primerNombre" />
+                    <h:inputText id="primerNombre" value="#{reporteRegistraduria3Controller.selected.primerNombre}" title="#{bundle.EditReporteRegistraduria3Title_primerNombre}" />
+                    <h:outputLabel value="#{bundle.EditReporteRegistraduria3Label_segundoNombre}" for="segundoNombre" />
+                    <h:inputText id="segundoNombre" value="#{reporteRegistraduria3Controller.selected.segundoNombre}" title="#{bundle.EditReporteRegistraduria3Title_segundoNombre}" />
+                    <h:outputLabel value="#{bundle.EditReporteRegistraduria3Label_primerApellido}" for="primerApellido" />
+                    <h:inputText id="primerApellido" value="#{reporteRegistraduria3Controller.selected.primerApellido}" title="#{bundle.EditReporteRegistraduria3Title_primerApellido}" />
+                    <h:outputLabel value="#{bundle.EditReporteRegistraduria3Label_segundoApellido}" for="segundoApellido" />
+                    <h:inputText id="segundoApellido" value="#{reporteRegistraduria3Controller.selected.segundoApellido}" title="#{bundle.EditReporteRegistraduria3Title_segundoApellido}" />
+                    <h:outputLabel value="#{bundle.EditReporteRegistraduria3Label_vigencia}" for="vigencia" />
+                    <h:inputText id="vigencia" value="#{reporteRegistraduria3Controller.selected.vigencia}" title="#{bundle.EditReporteRegistraduria3Title_vigencia}" />
+                    <h:outputLabel value="#{bundle.EditReporteRegistraduria3Label_fechaCarga}" for="fechaCarga" />
+                    <h:inputText id="fechaCarga" value="#{reporteRegistraduria3Controller.selected.fechaCarga}" title="#{bundle.EditReporteRegistraduria3Title_fechaCarga}" >
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.EditReporteRegistraduria3Label_idRepoestadis3}" for="idRepoestadis3" />
+                    <h:inputText id="idRepoestadis3" value="#{reporteRegistraduria3Controller.selected.idRepoestadis3}" title="#{bundle.EditReporteRegistraduria3Title_idRepoestadis3}" required="true" requiredMessage="#{bundle.EditReporteRegistraduria3RequiredMessage_idRepoestadis3}"/>
+                </h:panelGrid>
+                <h:commandLink action="#{reporteRegistraduria3Controller.update}" value="#{bundle.EditReporteRegistraduria3SaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditReporteRegistraduria3ViewLink}"/>
+                <br />
+                <h:commandLink action="#{reporteRegistraduria3Controller.prepareList}" value="#{bundle.EditReporteRegistraduria3ShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.EditReporteRegistraduria3IndexLink}" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

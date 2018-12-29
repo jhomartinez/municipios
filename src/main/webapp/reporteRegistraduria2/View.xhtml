@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="./../Template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewReporteRegistraduria2Title}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewReporteRegistraduria2Label_tipodocInfrac}"/>
+                    <h:outputText value="#{reporteRegistraduria2Controller.selected.tipodocInfrac}" title="#{bundle.ViewReporteRegistraduria2Title_tipodocInfrac}"/>
+                    <h:outputText value="#{bundle.ViewReporteRegistraduria2Label_apellido1Infrac}"/>
+                    <h:outputText value="#{reporteRegistraduria2Controller.selected.apellido1Infrac}" title="#{bundle.ViewReporteRegistraduria2Title_apellido1Infrac}"/>
+                    <h:outputText value="#{bundle.ViewReporteRegistraduria2Label_apellido2Infrac}"/>
+                    <h:outputText value="#{reporteRegistraduria2Controller.selected.apellido2Infrac}" title="#{bundle.ViewReporteRegistraduria2Title_apellido2Infrac}"/>
+                    <h:outputText value="#{bundle.ViewReporteRegistraduria2Label_nombre1Infrac}"/>
+                    <h:outputText value="#{reporteRegistraduria2Controller.selected.nombre1Infrac}" title="#{bundle.ViewReporteRegistraduria2Title_nombre1Infrac}"/>
+                    <h:outputText value="#{bundle.ViewReporteRegistraduria2Label_nombre2Infrac}"/>
+                    <h:outputText value="#{reporteRegistraduria2Controller.selected.nombre2Infrac}" title="#{bundle.ViewReporteRegistraduria2Title_nombre2Infrac}"/>
+                    <h:outputText value="#{bundle.ViewReporteRegistraduria2Label_tipodocInfracCase}"/>
+                    <h:outputText value="#{reporteRegistraduria2Controller.selected.tipodocInfracCase}" title="#{bundle.ViewReporteRegistraduria2Title_tipodocInfracCase}"/>
+                    <h:outputText value="#{bundle.ViewReporteRegistraduria2Label_documentoInfrac}"/>
+                    <h:outputText value="#{reporteRegistraduria2Controller.selected.documentoInfrac}" title="#{bundle.ViewReporteRegistraduria2Title_documentoInfrac}"/>
+                    <h:outputText value="#{bundle.ViewReporteRegistraduria2Label_fechaCarga}"/>
+                    <h:outputText value="#{reporteRegistraduria2Controller.selected.fechaCarga}" title="#{bundle.ViewReporteRegistraduria2Title_fechaCarga}">
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:outputText>
+                    <h:outputText value="#{bundle.ViewReporteRegistraduria2Label_idRepoestadis2}"/>
+                    <h:outputText value="#{reporteRegistraduria2Controller.selected.idRepoestadis2}" title="#{bundle.ViewReporteRegistraduria2Title_idRepoestadis2}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{reporteRegistraduria2Controller.destroyAndView}" value="#{bundle.ViewReporteRegistraduria2DestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewReporteRegistraduria2EditLink}"/>
+                <br />
+                <h:commandLink action="#{reporteRegistraduria2Controller.prepareCreate}" value="#{bundle.ViewReporteRegistraduria2CreateLink}" />
+                <br />
+                <h:commandLink action="#{reporteRegistraduria2Controller.prepareList}" value="#{bundle.ViewReporteRegistraduria2ShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewReporteRegistraduria2IndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>
